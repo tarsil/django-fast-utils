@@ -56,7 +56,7 @@ setup(
     author_email='tiago.arasilva@gmail.com',
     packages=find_packages(exclude=['tests*']),
     include_package_data=True,
-    install_requires=["django>=2.2", "pytz", "django-gardian>=2.4.0"],
+    install_requires=["django>=2.2", "pytz", "django-guardian>=2.4.0"],
     python_requires=">=3.7",
     zip_safe=False,
     classifiers=[
