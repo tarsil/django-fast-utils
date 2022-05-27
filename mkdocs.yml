@@ -1,0 +1,52 @@
+site_name: Django Fast Utils
+site_description: The little library for your django projects with little effort.
+
+repo_name: tarsil/django-fast-utils
+repo_url: https://github.com/tarsil/django-fast-utils
+edit_uri: ""
+
+theme:
+  name: material
+
+  palette:
+    # Toggle light mode
+    - scheme: default
+      primary: light green
+      accent: teal
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+    # Toggle dark mode
+    - scheme: slate
+      primary: pink
+      accent: blue
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+nav:
+  - Introduction: "index.md"
+  - "backends.md"
+  - "exceptions.md"
+  - "fields.md"
+  - "helpers.md"
+  - "paginator.md"
+  - "permissions.md"
+  - Auth:
+      - Generics: "auth/generics.md"
+
+  - Database:
+      - Fields: "db/fields.md"
+  - Utils:
+      - Audit: "utils/audit.md"
+  - Releases: "releases.md"
