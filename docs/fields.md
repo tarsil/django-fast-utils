@@ -11,7 +11,7 @@ declaration in the models.
 ### How to use
 
 ```python
-from django_fast_utils.fields import ChoiceField
+from django_fast_utils.fields import ChoicesField
 from django.db import models
 
 

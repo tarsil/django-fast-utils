@@ -6,7 +6,7 @@
 
 ## Table of Contents
 
-- [About Django Fast Utils DRF](#about-django-fast-utils-drf)
+- [About Django Fast Utils](#about-django-fast-utils-drf)
   - [Overview](#overview)
   - [Versions](#supported-django-and-python-versions)
 - [Documentation](#documentation)
