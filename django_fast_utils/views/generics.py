@@ -27,7 +27,7 @@ class SelectRelatedMixin(GenericAPIView):
         return queryset
 
 
-class PrefetchRelatedRelatedMixin(GenericAPIView):
+class PrefetchRelatedMixin(GenericAPIView):
     prefetch_related = None
 
     def get_queryset(self):

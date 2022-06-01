@@ -1,8 +1,12 @@
 # Releases
 
+## 1.0.3
+
+- Fixed typo in `PrefetchRelatedMixin`.
+
 ## 1.0.2
 
-- Add `SelectRelatedMixin` and `PrefetchRelatedRelatedMixin` for generic views.
+- Add `SelectRelatedMixin` and `PrefetchRelatedMixin` for generic views.
 
 ## 1.0.1
 

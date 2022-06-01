@@ -19,7 +19,7 @@ class MyView(SelectRelatedMixin, ListAPIView):
 
 ```
 
-## PrefetchRelatedRelatedMixin
+## PrefetchRelatedMixin
 
 Optimises the queryset on a Pythonic level. [More information](https://docs.djangoproject.com/en/4.0/ref/models/querysets/#prefetch-related).
 
@@ -27,11 +27,11 @@ Optimises the queryset on a Pythonic level. [More information](https://docs.djan
 
 ```python
 from django.db import models
-from django_fast_utils.views.generics import PrefetchRelatedRelatedMixin
+from django_fast_utils.views.generics import PrefetchRelatedMixin
 from rest_framework.generics import ListAPIView
 
 
-class MyView(PrefetchRelatedRelatedMixin, ListAPIView):
+class MyView(PrefetchRelatedMixin, ListAPIView):
     prefetch_related = ['company', 'company__user']
 
 ```
