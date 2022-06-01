@@ -5,8 +5,8 @@ Custom fields to be used within `models` or `serializers` of any django applicat
 
 ## ChoicesField
 
-Django provides a choices inside the CharField with the attribute `choices`. This field allows direct
-declaration in the models.
+Django provides a choices inside the CharField with the attribute `choices`. This field
+is a wrapper that allows direct declaration in the models.
 
 ### How to use
 
@@ -16,7 +16,7 @@ from django.db import models
 
 
 class MyModel(models.Model):
-    custom_choices = ChoiceField(choices=MY_CHOICES)
+    custom_choices = ChoicesField(choices=MY_CHOICES)
     ...
 ```
 

@@ -44,7 +44,8 @@ nav:
   - "permissions.md"
   - Auth:
       - Generics: "auth/generics.md"
-
+  - Views:
+      - Generics: "views/generics.md"
   - Database:
       - Fields: "db/fields.md"
   - Utils:
