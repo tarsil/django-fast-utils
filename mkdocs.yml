@@ -46,6 +46,7 @@ nav:
       - Generics: "auth/generics.md"
   - Views:
       - Generics: "views/generics.md"
+      - JWT Auth: "views/auth.md"
   - Database:
       - Fields: "db/fields.md"
   - Utils:
