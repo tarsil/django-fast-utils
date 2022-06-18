@@ -1,5 +1,9 @@
 # Releases
 
+## 2.0.2
+
+- Changed imports.
+
 ## 2.0.1
 
 - Added missing requirement.
