@@ -1,9 +1,13 @@
 # Releases
 
+## 2.0.1
+
+- Added missing requirement.
+
 ## 2.0.0
 
 - Added `LoginJWTApiView` allowing the JWT Token being protected via `httpOnly=true` cookie
-  and refreshing the token via `middleware`. [Docs here](./views/auth.md)
+  and refreshing the token via `middleware`. [Docs here](./views/auth.md).
 
 ## 1.0.3
 
