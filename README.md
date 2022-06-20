@@ -1,5 +1,7 @@
 # Django Fast Utils
 
+![Build and Publish](https://github.com/tarsil/django-fast-utils/actions/workflows/main.yml/badge.svg)
+
 **Official Documentation** - https://tarsil.github.io/django-fast-utils/
 
 ---
