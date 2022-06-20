@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+      - main
+      - ci
+      - release
+
+jobs:
+  tests:
+    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-20.04
+
+    strategy:
+      matrix:
+        python-version:
+          - "3.9"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set Python version
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: "pip"
+          cache-dependency-path: "requirements.txt"
+
+      - name: Install Python dependencies
+        run: pip install wheel twine mkdocs-material
+
+      - name: Build Python package
+        run: python setup.py sdist bdist_wheel
+
+      - name: Upload to test pypi.
+        run: twine upload --repository-url https://test.pypi.org/legacy/ -u ${{ secrets.TEST_PYPI_USER }} -p ${{ secrets.TEST_PYPI_PASSWORD }} --skip-existing dist/*.whl
+
+      - name: Upload to pypi.
+        run: twine upload -u ${{ secrets.PYPI_USER }} -p ${{ secrets.PYPI_PASSWORD }} --skip-existing dist/*.whl
+
+      - name: Upload docs.
+        run: mkdocs gh-deploy --force
