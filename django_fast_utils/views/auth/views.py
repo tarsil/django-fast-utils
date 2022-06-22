@@ -135,3 +135,20 @@ class LoginJWTApiView(APIView):
         csrf.get_token(request)
         response.data = data
         return response
+
+
+class LogoutJWTApiView(APIView):
+
+    def post(self, request):
+        """
+        Logs out of the system and removes the cookie.
+        """
+        response = Response()
+        response.delete_cookie(key="csrftoken")
+        response.delete_cookie(
+            key=settings.SIMPLE_JWT['AUTH_COOKIE']
+        )
+        response.delete_cookie(
+            key=settings.SIMPLE_JWT['REFRESH_COOKIE']
+        )
+        return response

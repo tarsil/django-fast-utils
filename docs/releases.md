@@ -1,5 +1,11 @@
 # Releases
 
+## 2.0.3
+
+- Fixed middleware validation and verification.
+- Added `DJANGO_FAST_UTILS` settings.
+- Added `LogoutJWTApiView`.
+
 ## 2.0.2
 
 - Changed imports.

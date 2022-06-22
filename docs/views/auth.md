@@ -86,15 +86,30 @@ SIMPLE_JWT = {
 
 ```
 
-5. Add the `LoginJWTApiView` to your urls.
+5. Add the `LoginJWTApiView` and `LogoutJWTApiView` to your urls.
+
+In your settings.py add `DJANGO_FAST_UTILS` setting:
+
+```python
+DJANGO_FAST_UTILS = {
+    'LOGOUT_URL': ['/logout']
+}
+```
+
+The `LOGOUT_URL` is expecting as list of possible `logout` urls used by the application.
+This will ensure the middleware doesn't execute logic for specific views such as `refresh` of
+tokens.
+
+**Default**: `['/logout']`
 
 ```python
 from django.urls import path
-from django_fast_utils.views.auth.views import LoginJWTApiView
+from django_fast_utils.views.auth.views import LoginJWTApiView, LogoutJWTApiView
 
 urlpatterns = [
     ...
     path('login', LoginJWTApiView.as_view(), name='login')
+    path('logout', LoginJWTApiView.as_view(), name='login')
     ...
 ]
 ```

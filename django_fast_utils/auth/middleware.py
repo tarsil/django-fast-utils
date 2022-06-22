@@ -10,6 +10,8 @@ from rest_framework.exceptions import ValidationError
 from rest_framework_simplejwt.exceptions import InvalidToken, TokenError
 from rest_framework_simplejwt.tokens import RefreshToken, UntypedToken
 
+from .. import settings as api_settings
+
 AUTH_HEADER_TYPES = settings.SIMPLE_JWT['AUTH_HEADER_TYPES']
 
 AUTH_HEADER_TYPE_BYTES = set(
@@ -68,6 +70,10 @@ class JWTRefreshRequestCookies(MiddlewareMixin):
     """
     Refreshes the cookie if exists in the request and
     """
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.app_settings = settings if hasattr(settings, 'DJANGO_FAST_UTILS') else api_settings
+
     def get_timestamp(self, date_to_parse):
         """
         Converts a date into timestamp.
@@ -111,15 +117,15 @@ class JWTRefreshRequestCookies(MiddlewareMixin):
             raise InvalidToken(e.args[0])
         return data
 
-    def process_request(self, request):
+    def exclude_from_request(self, request):
         """
-        Processes the request by checking the headers of the request and if the tokens
-        are present in the cookies.
+        Extracts the full path information.
+        """
+        return request.get_full_path_info()
 
-        1. Checks for the access token
-        2. Validates the token
-        3. Refreshes the token
-        4. Adds it back to the headers
+    def handle_request(self, request):
+        """
+        Handles the request for the acess an and refresh token.
         """
         access_token = request.COOKIES.get(settings.SIMPLE_JWT['AUTH_COOKIE']) or None
         refresh_token = request.COOKIES.get(settings.SIMPLE_JWT['REFRESH_COOKIE']) or None
@@ -138,9 +144,9 @@ class JWTRefreshRequestCookies(MiddlewareMixin):
                 data = self.refresh(refresh_token)
                 request.COOKIES[settings.SIMPLE_JWT['AUTH_COOKIE']] = data[settings.SIMPLE_JWT['AUTH_COOKIE']]
 
-    def process_response(self, request, response):
+    def handle_response(self, request, response):
         """
-        Sends the new access token to the client.
+        Handles the response for the cookie.
         """
         access_token = request.COOKIES.get(settings.SIMPLE_JWT['AUTH_COOKIE']) or None
 
@@ -158,3 +164,33 @@ class JWTRefreshRequestCookies(MiddlewareMixin):
             samesite=settings.SIMPLE_JWT['AUTH_COOKIE_SAMESITE']
         )
         return response
+
+    def process_request(self, request):
+        """
+        Processes the request by checking the headers of the request and if the tokens
+        are present in the cookies.
+
+        1. Checks for the access token
+        2. Validates the token
+        3. Refreshes the token
+        4. Adds it back to the headers
+        """
+        assert 'LOGOUT_URL' in self.app_settings.DJANGO_FAST_UTILS, (
+            "'LOGOUT_URL' key is missing from the settings."
+        )
+        assert isinstance(self.app_settings.DJANGO_FAST_UTILS['LOGOUT_URL'], list), (
+            f"'LOGOUT_URL' should be a list and not {type(self.app_settings.DJANGO_FAST_UTILS['LOGOUT_URL'])}."
+        )
+
+        url = self.exclude_from_request(request)
+        if url not in self.app_settings.DJANGO_FAST_UTILS['LOGOUT_URL']:
+            return self.handle_request(request)
+
+    def process_response(self, request, response):
+        """
+        Sends the new access token to the client.
+        """
+        url = self.exclude_from_request(request)
+        if url not in self.app_settings.DJANGO_FAST_UTILS['LOGOUT_URL']:
+            return self.handle_response(request, response)
+        return self.get_response(request)
