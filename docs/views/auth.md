@@ -108,8 +108,8 @@ from django_fast_utils.views.auth.views import LoginJWTApiView, LogoutJWTApiView
 
 urlpatterns = [
     ...
-    path('login', LoginJWTApiView.as_view(), name='login')
-    path('logout', LoginJWTApiView.as_view(), name='login')
+    path('login', LoginJWTApiView.as_view(), name='login'),
+    path('logout', LoginJWTApiView.as_view(), name='logout')
     ...
 ]
 ```
