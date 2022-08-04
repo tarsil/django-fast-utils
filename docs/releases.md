@@ -1,5 +1,9 @@
 # Releases
 
+## 2.0.4
+
+- Fixed code smell in `get_prep_value` from `ListField`.
+
 ## 2.0.3
 
 - Fixed middleware validation and verification.

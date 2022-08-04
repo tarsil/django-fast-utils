@@ -17,10 +17,11 @@ class ListField(models.TextField):
     """
     Special Field type specially design to work with Lists for special databases
     """
+
     description = _("Group Concat List field")
 
     def __init__(self, *args, **kwargs):
-        self.delimiter = kwargs.pop('delimiter', ',')
+        self.delimiter = kwargs.pop("delimiter", ",")
         super().__init__(*args, **kwargs)
 
     def parse(self, value_string):
@@ -42,7 +43,7 @@ class ListField(models.TextField):
 
     def get_prep_value(self, value):
         if value is None:
-            return value
+            return
         return value
 
     def value_to_string(self, obj):
