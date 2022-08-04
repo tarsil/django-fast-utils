@@ -8,20 +8,23 @@
 
 ## Table of Contents
 
-- [About Django Fast Utils](#about-django-fast-utils-drf)
-  - [Overview](#overview)
-  - [Versions](#supported-django-and-python-versions)
-- [Documentation](#documentation)
-  - [Installation](#installation)
-- [Documentation and Support](#documentation-and-support)
-- [License](#license)
+- [Django Fast Utils](#django-fast-utils)
+  - [Table of Contents](#table-of-contents)
+  - [About Django Fast Utils](#about-django-fast-utils)
+    - [Overview](#overview)
+      - [Supported Django and Python Versions](#supported-django-and-python-versions)
+  - [Documentation](#documentation)
+    - [Installation](#installation)
+  - [Documentation and Support](#documentation-and-support)
+  - [License](#license)
 
 ---
 
 ## About Django Fast Utils
 
 Django Fast Utils is a miscellaneous of common utilities for every new or existing
-django projects. From auditing models to database fields and REST framework mixins.
+django project. From auditing models to database fields and REST framework mixins,
+you name it.
 
 ### Overview
 
