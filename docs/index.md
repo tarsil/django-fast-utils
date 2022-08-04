@@ -1,18 +1,24 @@
 # Django Fast Utils
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=tarsil_django-fast-utils&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=tarsil_django-fast-utils)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=tarsil_django-fast-utils&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=tarsil_django-fast-utils)(https://sonarcloud.io/summary/new_code?id=tarsil_django-fast-utils)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=tarsil_django-fast-utils&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=tarsil_django-fast-utils)
+
 **Official Documentation** - https://tarsil.github.io/django-fast-utils/
 
 ---
 
 ## Table of Contents
 
-- [About Django Fast Utils](#about-django-fast-utils-drf)
-  - [Overview](#overview)
-  - [Versions](#supported-django-and-python-versions)
-- [Documentation](#documentation)
-  - [Installation](#installation)
-- [Documentation and Support](#documentation-and-support)
-- [License](#license)
+- [Django Fast Utils](#django-fast-utils)
+  - [Table of Contents](#table-of-contents)
+  - [About Django Fast Utils](#about-django-fast-utils)
+    - [Overview](#overview)
+      - [Supported Django and Python Versions](#supported-django-and-python-versions)
+  - [Documentation](#documentation)
+    - [Installation](#installation)
+  - [Documentation and Support](#documentation-and-support)
+  - [License](#license)
 
 ---
 
