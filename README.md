@@ -53,7 +53,7 @@ $ pip install django-fast-utils
 
 ## Documentation and Support
 
-Full documentation for the project is available at https://tarsil.github.io/django-fast-utils/
+Full documentation for the project is available at https://django-fast-utils.tarsild.io
 
 ## License
 

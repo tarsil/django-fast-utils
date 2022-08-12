@@ -17,7 +17,6 @@
       - [Supported Django and Python Versions](#supported-django-and-python-versions)
   - [Documentation](#documentation)
     - [Installation](#installation)
-  - [Documentation and Support](#documentation-and-support)
   - [License](#license)
 
 ---
@@ -46,12 +45,8 @@ django projects. From auditing models to database fields and REST framework mixi
 To install django-fast-utils:
 
 ```shell
-$ pip install django-fast-utils
+pip install django-fast-utils
 ```
-
-## Documentation and Support
-
-Full documentation for the project is available at https://tarsil.github.io/django-fast-utils/
 
 ## License
 
