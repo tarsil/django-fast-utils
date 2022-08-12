@@ -5,7 +5,7 @@
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=tarsil_django-fast-utils&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=tarsil_django-fast-utils)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=tarsil_django-fast-utils&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=tarsil_django-fast-utils)
 
-**Official Documentation** - https://tarsil.github.io/django-fast-utils/
+**Official Documentation** - <https://django-fast-utils.tarsild.io>
 
 ---
 
