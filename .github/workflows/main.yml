@@ -3,10 +3,10 @@ name: Build and Publish
 on:
   push:
     branches:
-      - master
-      - main
-      - ci
-      - release
+      - "**"
+  schedule:
+    - cron: "0 0 * * *"
+
 jobs:
   tests:
     name: Python ${{ matrix.python-version }}
